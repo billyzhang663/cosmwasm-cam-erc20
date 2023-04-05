@@ -2,7 +2,32 @@
 name = "cam-erc20"
 version = "0.1.0"
 edition = "2021"
+authors = ["Billy Zhang <bz6639081@gmail.com>"]
+description = "Implementation of a CAM CosmWasm-20 compliant token"
+license = "Apache-2.0"
+repository = "https://github.com/billyzhang663/cosmwasm-cam-erc20.git"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+backtraces = ["cosmwasm-std/backtraces"]
+# use library feature to disable all instantiate/execute/query exports
+library = []
+
 [dependencies]
+cosmwasm-schema = "1.2.3"
+cosmwasm-std = "1.2.3"
+cw-storage-plus = "1.0.1"
+cw-utils = "1.0.1"
+cw2 = "1.0.1"
+cw20 = "1.0.1"
+schemars = "0.8.12"
+semver = "1.0.17"
+serde = "1.0.159"
+thiserror = "1.0.40"
+
+[dev-dependencies]
+cw-multi-test = "0.16.1"
